@@ -1,0 +1,102 @@
+
+server:
+  servlet:
+   context-path: "/"
+  port : 9443
+  ssl:
+    enabled: true
+    key-store: "classpath:sslsecurity.p12"
+    key-store-password: "password"
+    key-store-type: "PKCS12"
+    key-alias: "sslsecurity"
+
+
+
+spring:
+  datasource:
+   url: "jdbc:postgresql://localhost:5432/webbook"
+   username: "postgres"
+   password: "postgres"
+   driver-class-name: "org.postgresql.Driver"
+   testWhileIdle: true
+   validationQuery: "SELECT 1"
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: "update"
+    properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
+
+  mail:
+    host: "smtp.gmail.com"
+    port: 465
+    username: "elwebbook@gmail.com"
+    password: "Vitalii1995"
+    protocol: "smtps"
+    debug: true
+    properties.mail.smtp:
+          auth: true
+          starttls:
+            enable: true
+
+    sender:
+      name: "WebBook"
+      subject: "Please verify your registration"
+      url: "https://localhost:9443"
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: 192144046194251
+            clientSecret: d961adc7f547dc1189d61813c4b737a5
+            scope:
+              - email
+              - public_profile
+          google:
+            client-id: 51775286988-knqrjdg2jps0hjfv16v7s2vvbel1srtd.apps.googleusercontent.com
+            client-secret: ujKVjMsqZ9PN-IVWuCzuTNbq
+            scope:
+              - email
+              - profile
+              - openid
+
+
+jwt:
+  privateAccessTokenSecret: "HRlELXqpSB"
+  publicAccessTokenSecret: "HRlELXqpSB"
+  privateRefreshTokenSecret: "HRlELGgsdHghsSd"
+  publicRefreshTokenSecret: "HRlELGgsdHghsSd"
+  refresh:
+    header: "Refresh"
+    expiration: 3600000
+    rememberMe:
+      expiration: 1080000000
+
+  access:
+    header: "Authorization"
+    expiration: 900000
+
+  tokenType:
+    value: "Bearer"
+    header: "token_type"
+
+  header:
+    UserAgent: "User-Agent"
+
+removeExpiredToken:
+  fixedDelay.in.milliseconds: 86400000
+  initialDelay.in.milliseconds: 86400000
+
+
+logging:
+  level:
+    org:
+      springframework: "INFO"
+
+
+security.basic.enabled: false
+management.security.enabled: false
+
+cors.allow.origins: "*"
+

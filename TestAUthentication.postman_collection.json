@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "ae8957a8-42f6-4d11-a174-d55bcaf4b001",
+		"name": "TestAUthentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9090/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"vitaliy089@gmail.com\",\n    \"password\":\"12345\",\n    \"rememberMe\":\"true\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXRhbGl5c2Vta3VseWNoQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiI6cmVhZCJ9XSwiaWF0IjoxNjEzOTM4NTUxLCJleHAiOjE2MTM5Mzk0NTF9.RZR7Gv53SHlLd3ttRK5qeoNfUGUiv0Ypounil5Zfxl4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/refresh",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Refresh",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXRhbGl5c2Vta3VseWNoQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiI6cmVhZCJ9XSwiaWF0IjoxNjEzOTM4NTUxLCJleHAiOjE2MTUwMTg1NTF9.rG4xMamPbFff1FqT5PPJz1pcSkc4Ge2roKkr3ja8E0s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9090/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/logout",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ2aXRhbGl5c2Vta3VseWNoQGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjpbeyJhdXRob3JpdHkiOiI6cmVhZCJ9XSwiaWF0IjoxNjEzOTQwMjE2LCJleHAiOjE2MTM5NDExMTZ9.2lfKvigKRifgBjXznWYgqEXG0D_hu5Q4uVWsyvifsC4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/enroll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userName\":\"VitSem\",\n\"userEmail\":\"vitaliy089@gmail.com\",\n\"password\":\"12345\",\n\"confirmPassword\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/enroll?email=vitaliysemcxvxkulych@gmail.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/enroll?email=vitaliysemcxvxkulych@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"enroll"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "vitaliysemcxvxkulych@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9090/activate?activationCode=77e2e77d-5559-4467-ae7d-8bafe48e9c38",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/activate?activationCode=77e2e77d-5559-4467-ae7d-8bafe48e9c38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"activate"
+					],
+					"query": [
+						{
+							"key": "activationCode",
+							"value": "77e2e77d-5559-4467-ae7d-8bafe48e9c38"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
